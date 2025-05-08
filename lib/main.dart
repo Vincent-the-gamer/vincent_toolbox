@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:vincent_toolbox/home.dart';
+import "package:provider/provider.dart";
+import 'package:vincent_toolbox/store/page_store.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+      ChangeNotifierProvider.value(
+          value: PageStore(0),
+          child: const MyApp()
+      )
+  );
 }
 
 class MyApp extends StatelessWidget {
